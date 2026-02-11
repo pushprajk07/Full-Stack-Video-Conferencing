@@ -9,7 +9,7 @@
     "start": "node src/app.js",
     "prod": "pm2 src/app.js"
   },
-  "author": "apnacollege",
+  "author": "Pushpraj Kumar",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
