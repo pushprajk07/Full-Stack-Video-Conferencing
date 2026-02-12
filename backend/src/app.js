@@ -20,7 +20,12 @@ const io = connectToSocket(server);
 
 app.set("port", (process.env.PORT || 8000))
 app.use(cors({
-    origin: process.env.CORS_ORIGIN || "*", // Default to allow all, but can be restricted
+    origin: (origin, callback) => {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        // Allow any origin
+        callback(null, true);
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
