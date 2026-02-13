@@ -142,7 +142,7 @@ export default function VideoMeetComponent() {
         }
 
 
-    }, [video, audio])
+    }, [video, audio]) // eslint-disable-next-line react-hooks/exhaustive-deps
     let getMedia = () => {
         setVideo(videoAvailable);
         setAudio(audioAvailable);
