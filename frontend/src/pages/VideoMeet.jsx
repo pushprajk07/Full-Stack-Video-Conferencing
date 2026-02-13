@@ -408,7 +408,7 @@ export default function VideoMeetComponent() {
         if (screen !== undefined) {
             getDislayMedia();
         }
-    }, [screen])
+    }, [screen]) // eslint-disable-next-line react-hooks/exhaustive-deps
     let handleScreen = () => {
         setScreen(!screen);
     }
@@ -421,16 +421,16 @@ export default function VideoMeetComponent() {
         window.location.href = "/"
     }
 
-    let openChat = () => {
-        setModal(true);
-        setNewMessages(0);
-    }
-    let closeChat = () => {
-        setModal(false);
-    }
-    let handleMessage = (e) => {
-        setMessage(e.target.value);
-    }
+    // let openChat = () => {
+    //     setModal(true);
+    //     setNewMessages(0);
+    // }
+    // let closeChat = () => {
+    //     setModal(false);
+    // }
+    // let handleMessage = (e) => {
+    //     setMessage(e.target.value);
+    // }
 
     const addMessage = (data, sender, socketIdSender) => {
         setMessages((prevMessages) => [
